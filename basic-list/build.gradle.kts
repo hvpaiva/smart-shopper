@@ -13,6 +13,5 @@ sonarqube {
         property("sonar.projectKey", "hvpaiva-github_smart-shopper_basic-list")
         property("sonar.organization", "hvpaiva-github")
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.sources", "src")
     }
 }
