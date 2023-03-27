@@ -13,5 +13,11 @@ sonarqube {
         property("sonar.projectKey", "hvpaiva-github_smart-shopper_basic-list")
         property("sonar.organization", "hvpaiva-github")
         property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.sources", "src/main/kotlin")
+        property("sonar.tests", "src/test/kotlin")
+        property(
+            "sonar.exclusions",
+            "src/main/kotlin/dev/hvpaiva/smart/shopper/basic/list/BasicListApplication.kt,src/test/kotlin/dev/hvpaiva/smart/shopper/basic/list/BasicListApplicationTests.kt"
+        )
     }
 }
