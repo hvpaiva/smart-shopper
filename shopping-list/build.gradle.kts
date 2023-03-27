@@ -10,7 +10,7 @@ dependencies {
 
 sonarqube {
     properties {
-        property("sonar.projectKey", "hvpaiva-github_smart-shopper_user")
+        property("sonar.projectKey", "hvpaiva-github_smart-shopper_shopping-list")
         property("sonar.organization", "hvpaiva-github")
         property("sonar.host.url", "https://sonarcloud.io")
     }
