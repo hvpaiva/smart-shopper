@@ -1,0 +1,32 @@
+version: "3"
+services:
+  basic-list:
+    build:
+      context: ./basic-list
+    ports:
+      - "8081:8081"
+  market:
+    build:
+      context: ./market
+    ports:
+      - "8082:8082"
+  price:
+    build:
+      context: ./price
+    ports:
+      - "8083:8083"
+  product:
+    build:
+      context: ./product
+    ports:
+      - "8084:8084"
+  shopping-list:
+    build:
+      context: ./shopping-list
+    ports:
+      - "8085:8085"
+  user:
+    build:
+      context: ./user
+    ports:
+      - "8086:8086"
