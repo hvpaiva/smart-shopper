@@ -1,11 +1,11 @@
-package dev.hvpaiva.smart.shopper.market
+package dev.hvpaiva.smart.shopper.shopping.list
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-open class Application
+open class ShoppingListApplication
 
 fun main(args: Array<String>) {
-    runApplication<Application>(*args)
+    runApplication<ShoppingListApplication>(*args)
 }

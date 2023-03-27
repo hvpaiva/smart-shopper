@@ -1,10 +1,10 @@
-package dev.hvpaiva.smart.shopper.user
+package dev.hvpaiva.smart.shopper.basic.list
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class ApplicationTests {
+class BasicListApplicationTests {
 
     @Test
     fun contextLoads() {
