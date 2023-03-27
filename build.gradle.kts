@@ -14,6 +14,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 allprojects {
+    version = rootProject.version
     repositories {
         mavenCentral()
     }
@@ -75,6 +76,8 @@ subprojects {
 
         reports {
             xml.required.set(true)
+            html.required.set(true)
+            html.outputLocation.set(layout.buildDirectory.dir("jacocoHml"))
         }
     }
 }
