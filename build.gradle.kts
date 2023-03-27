@@ -1,14 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("org.springframework.boot") version "3.0.5"
     id("io.spring.dependency-management") version "1.1.0"
-    kotlin("jvm") version "1.7.22"
-    kotlin("plugin.spring") version "1.7.22"
+    id("org.sonarqube") version "3.5.0.2730"
+    kotlin("jvm") version "1.8.10"
+    kotlin("plugin.spring") version "1.8.10"
+    jacoco
 }
 
 group = "dev.hvpaiva"
-version = "1.0.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 allprojects {
@@ -19,6 +22,7 @@ allprojects {
 
 subprojects {
     apply(plugin = "kotlin")
+    apply(plugin = "jacoco")
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
 
@@ -38,5 +42,42 @@ subprojects {
 
     tasks.withType<Test> {
         useJUnitPlatform()
+        finalizedBy(tasks.jacocoTestReport)
     }
+
+    sonarqube {
+        properties {
+            property("sonar.projectKey", "hvpaiva_smart-shopper")
+            property("sonar.organization", "hvpaiva-github")
+            property("sonar.host.url", "https://sonarcloud.io")
+        }
+    }
+
+    tasks.jacocoTestReport {
+        dependsOn("test")
+
+        executionData.setFrom(fileTree(buildDir.resolve("jacoco")).apply {
+            include("*.exec", "*.ec")
+        })
+        classDirectories.setFrom(classDirectories.files.map {
+            fileTree(it).matching {
+                exclude(
+                    "**/Application.class",
+                    "**/ApplicationKt.class",
+                    "**/ApplicationTests.class",
+                    "**/Application.kt"
+                )
+            }
+        })
+
+        sourceDirectories.setFrom(files("src/main/kotlin"))
+
+        reports {
+            xml.required.set(true)
+        }
+    }
+}
+
+tasks.named<BootJar>("bootJar") {
+    enabled = false
 }

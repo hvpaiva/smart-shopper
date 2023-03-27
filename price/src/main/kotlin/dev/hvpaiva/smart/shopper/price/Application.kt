@@ -1,4 +1,4 @@
-package dev.hvpaiva.smart.shopper
+package dev.hvpaiva.smart.shopper.price
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
