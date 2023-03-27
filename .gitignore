@@ -35,6 +35,4 @@ out/
 ### VS Code ###
 .vscode/!/gradle/
 
-/gradlew.bat
-/gradlew
 /gradle/wrapper/gradle-wrapper.jar
