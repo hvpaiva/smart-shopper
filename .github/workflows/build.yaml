@@ -37,7 +37,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: basic-list/
-        run: gradle build sonarqube --info
   market:
     name: Market Job
     runs-on: ubuntu-latest
@@ -69,7 +68,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: market/
-        run: gradle build sonarqube --info
   price:
     name: Price Job
     runs-on: ubuntu-latest
@@ -101,7 +99,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: price/
-        run: gradle build sonarqube --info
   product:
     name: Product Job
     runs-on: ubuntu-latest
@@ -133,7 +130,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: product/
-        run: gradle build sonarqube --info
   shopping-list:
     name: Shopping List Job
     runs-on: ubuntu-latest
@@ -165,7 +161,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: shopping-list/
-        run: gradle build sonarqube --info
   user:
     name: User Job
     runs-on: ubuntu-latest
@@ -197,4 +192,3 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           project-basedir: user/
-        run: gradle build sonarqube --info
