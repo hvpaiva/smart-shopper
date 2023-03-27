@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: basic-list/
+          projectBaseDir: basic-list/
   market:
     name: Market Job
     runs-on: ubuntu-latest
@@ -67,7 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: market/
+          projectBaseDir: market/
   price:
     name: Price Job
     runs-on: ubuntu-latest
@@ -98,7 +98,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: price/
+          projectBaseDir: price/
   product:
     name: Product Job
     runs-on: ubuntu-latest
@@ -129,7 +129,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: product/
+          projectBaseDir: product/
   shopping-list:
     name: Shopping List Job
     runs-on: ubuntu-latest
@@ -160,7 +160,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: shopping-list/
+          projectBaseDir: shopping-list/
   user:
     name: User Job
     runs-on: ubuntu-latest
@@ -191,4 +191,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          project-basedir: user/
+          projectBaseDir: user/

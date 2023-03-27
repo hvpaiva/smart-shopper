@@ -45,14 +45,6 @@ subprojects {
         finalizedBy(tasks.jacocoTestReport)
     }
 
-    sonarqube {
-        properties {
-            property("sonar.projectKey", "hvpaiva_smart-shopper")
-            property("sonar.organization", "hvpaiva-github")
-            property("sonar.host.url", "https://sonarcloud.io")
-        }
-    }
-
     tasks.jacocoTestReport {
         dependsOn("test")
 
